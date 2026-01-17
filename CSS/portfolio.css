@@ -5,14 +5,21 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 0.475fr 2.5fr;
+  grid-template-rows: 0.3fr 5fr 2fr 0.25fr;
+  grid-template-areas:
+    "header header"
+    "siderbar main"
+    ". ."
+    "footer footer";
   background-color: rgb(213, 226, 219);
 }
 
 .header {
+  grid-area: header;
   display: flex;
+  justify-content: center;
   background-color: rgb(1, 59, 1);
   padding: 1rem;
   margin-bottom: 2rem;
@@ -20,22 +27,22 @@ body {
 
 h1 {
   color: whitesmoke;
+  font-size: 2.5rem;
 }
 
 h2 {
+  text-decoration: underline;
 }
 
 h3 {
+  text-decoration: underline;
 }
-
-.sidebar {
-}
-
 .nav-links {
   display: flex;
 }
 
 .list-box {
+  grid-area: sidebar;
   display: flex;
   flex-direction: column;
   padding-left: 0.25rem;
@@ -44,7 +51,7 @@ h3 {
 
 .Sidelink {
   border: 1px solid rgb(1, 59, 1);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   padding-left: 1rem;
   padding-right: 3rem;
   padding-top: 0.25rem;
@@ -54,12 +61,35 @@ h3 {
 }
 
 .main {
-  flex-grow: 1;
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  gap: 1rem;
+  border: 1px solid rgb(1, 59, 1);
+  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem gray;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: rgb(196, 214, 196);
+}
+
+img {
+  width: 100%;
 }
 
 .footer {
+  grid-area: footer;
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: rgb(1, 59, 1);
   padding: 1rem;
 }
